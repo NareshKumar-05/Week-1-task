@@ -1,0 +1,33 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create dataset
+data = {
+    'Student': ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+    'Study Hours': [1, 2, 3, 4, 5, 6, 7],
+    'Sleep Hours': [8, 7, 6, 2, 3, 4, 1],
+    'Score': [45, 50, 55, 70, 60, 80, 85]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+print("Student Performance Data:")
+print(df)
+
+# Plot graphs
+plt.figure(figsize=(10, 5))
+
+plt.subplot(1, 2, 1)
+plt.plot(df['Study Hours'], df['Score'], marker='o', color='blue')
+plt.title('Study Hours vs Score')
+plt.xlabel('Study Hours')
+plt.ylabel('Score')
+
+plt.subplot(1, 2, 2)
+plt.plot(df['Sleep Hours'], df['Score'], marker='o', color='red')
+plt.title('Sleep Hours vs Score')
+plt.xlabel('Sleep Hours')
+plt.ylabel('Score')
+
+plt.tight_layout()
+plt.show()
